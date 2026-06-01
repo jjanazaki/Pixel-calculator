@@ -1,0 +1,165 @@
+:root{
+    --darkest-blue: #0F1C2E;
+    --main-blue: #457B9D;
+    --medium-blue: #6DAEDB;
+    --light-blue: #A8DADC;
+    --background-blue: #F1FAFF;
+
+    --white: #FFFFFF;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:var(--background-blue);
+    font-family:'Press Start 2P', cursive;
+}
+
+/* APP */
+.app{
+    width:280px;
+    height:400px;
+
+    background:var(--background-blue);
+
+    border:4px solid var(--main-blue);
+
+    display:flex;
+    flex-direction:column;
+
+    box-shadow:6px 6px 0 var(--darkest-blue);
+}
+
+/* TITLE BAR */
+.titlebar{
+    height:42px;
+    background:var(--main-blue);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 10px;
+
+    -webkit-app-region:drag;
+}
+
+.title{
+    font-size:8px;
+    color:var(--white);
+    text-shadow:2px 2px 0 var(--darkest-blue);
+}
+
+.controls{
+    display:flex;
+    gap:4px;
+    -webkit-app-region:no-drag;
+}
+
+/* ✅ UNIFIED BUTTON STYLE (controls included) */
+.controls button,
+.btn{
+    border:none;
+
+    font-family:'Press Start 2P', cursive;
+    font-size:9px;
+
+    cursor:pointer;
+
+    border-radius:8px;
+
+    transition:0.08s ease;
+
+    box-shadow:
+        inset -3px -3px 0 var(--main-blue),
+        inset 3px 3px 0 var(--light-blue);
+}
+
+/* CONTROLS SPECIFIC */
+.controls button{
+    width:22px;
+    height:22px;
+
+    background:var(--medium-blue);
+    color:white;
+}
+
+/* SCREEN */
+.screen{
+    height:70px;
+
+    margin:10px;
+    padding:10px;
+
+    background:var(--white);
+    border:3px solid var(--main-blue);
+
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+
+    font-size:14px;
+
+    color:var(--darkest-blue);
+
+    box-shadow:
+        inset 3px 3px 0 var(--light-blue);
+}
+
+/* BUTTON GRID */
+.buttons{
+    flex:1;
+
+    display:grid;
+
+    grid-template-columns:repeat(4, 1fr);
+    grid-template-rows:repeat(5, 1fr);
+
+    gap:5px;
+
+    padding:10px;
+}
+
+/* BASE BUTTON */
+.btn{
+    background:var(--medium-blue);
+    color:var(--white);
+
+    height:100%;
+}
+
+/* CLICK ANIMATION (ALL BUTTONS) */
+.controls button:active,
+.btn:active{
+    transform:translateY(2px) scale(0.97);
+    box-shadow:
+        inset 2px 2px 0 var(--main-blue);
+}
+
+/* FUNCTION */
+.func{
+    background:var(--main-blue);
+}
+
+/* OPERATOR */
+.op{
+    background:var(--medium-blue);
+}
+
+/* ZERO */
+.zero{
+    grid-column:span 2;
+}
+
+/* EQUAL */
+.eq{
+    background:var(--main-blue);
+}
